@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Feature</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+</head>
+<body>
+
+    <div class="containerIntrisic">
+        {% if not context.display %}
+            <h2>Pls enter the number of feature values to select</h2>
+            <form action="" method="post">
+                <input type="number" name="number_of_features">
+                <br><hr>
+                <input type="submit" value="Fetch"/>
+            </form>
+            {{context.errmsg}}
+        {% else %}
+            <h2>Displaying {{context.number_of_features}} random feature values</h2>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        {% for column in context.feature_values.columns %}
+                        <th>{{column}}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for row in context.feature_values.iterrows() %}
+                    <tr class="{% if loop.index % 2 == 0 %}active-row{% endif %}">
+                        {% for column_data in row.1 %}
+                        <td>{{column_data}}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        {% endif %}
+    </div>
+
+</body>
+</html>

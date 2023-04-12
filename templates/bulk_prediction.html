@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Prediction</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+</head>
+<body>
+
+    <div class="containerIntrisic">
+        <h1>Bulk Prediction</h1>
+        <form action="" method="post">
+            <table class="styled-table" id="form-table">
+                <thead>
+                    <tr>
+                        {% for heading in context.feature_names %}
+                        <th>{{heading}}</th>
+                        {% endfor %}
+                        <th>predicted_target</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% if context.display_form %}
+
+                    <tr>
+                        {% for heading in context.feature_names %}
+                        <th><input type="number" name="{{heading}}"/></th>
+                        {% endfor %}
+                        <th></th>
+                    </tr>
+
+                    {% else %}
+
+                    {% for row in context.bulk_data.iterrows() %}
+                    <tr class="{% if loop.index % 2 == 0 %}active-row{% endif %}">
+                        {% for column_data in row.1 %}
+                        {% if not loop.last %}
+                        <th><input type="number" name="{{heading}}" value="{{column_data}}"/></th>
+                        {% endif %}
+                        {% endfor %}
+                        <td>{{row.1 | last}}</td>
+                    </tr>
+                    {% endfor %}
+
+                    {% endif %}
+
+                </tbody>
+            </table>
+            <input type="submit" value="Fetch" class="button-10" role="button"/>
+        </form>
+        <button class="button-10" role="button" onclick="addMoreRow()">Add More Row</button>
+    </div>
+
+</body>
+</html>

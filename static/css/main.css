@@ -1,0 +1,93 @@
+
+body {
+    background-color: #1c38d3;
+    /* text-align: center; */
+}
+.container {
+    /* width: min-content; */
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px gray;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #1c38d3;
+}
+
+.containerIntrisic {
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px gray;
+    background: white;
+    padding: 20px;
+    width: min-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    /* border: 1px solid #1c38d3; */
+}
+
+.styled-table thead tr {
+    background-color: #1c38d3;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #1c38d3;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #1c38d3;;
+    background-color: #d8d0d0;
+}
+
+
+
+.button-10 {
+  display: inline;
+  margin-left: 10px;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+
+  color: #fff;
+  background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+   background-origin: border-box;
+  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-10:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}
