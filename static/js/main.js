@@ -16,7 +16,6 @@ function addMoreRow() {
         let table_input = document.createElement("input");
         table_input.type = "number";
         table_input.name = table_head_row.children[i].innerHTML;
-        console.log(table_input.name);
 
         table_data.appendChild(table_input)
 

@@ -77,10 +77,7 @@ def perform_bulk_prediction():
     }
 
     if request.method == "POST":
-        print(request.form)
         bulk_data = arrange_data(request.form)
-        print(bulk_data)
-
         predicted_target = [getPrediction(values.to_dict()) for _, values in bulk_data.iterrows()]
         bulk_data["predicted_target"] = predicted_target
 
