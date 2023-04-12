@@ -22,7 +22,7 @@ def home():
 @app.route("/input-feature/", methods=["GET", "POST"])
 def input_feature():
     if request.method == "POST":
-        return getPrediction(request.form)
+        return "Predicted Target: " + str(getPrediction(request.form))
 
     feature_names = SAMPLE_DATA.columns[:-1]
     return render_template("input_feature.html", context={"features":feature_names})

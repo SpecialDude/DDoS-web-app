@@ -13,15 +13,21 @@
     <div class="container">
         <h1>Input new Feature Values</h1>
         <form action="" method="post">
-        {% for feature in context.features %}
-            {% if loop.index % 4 == 0 %}
-                <hr><br>
-            {% endif %}
-            <label for="{{feature}}">{{feature}}</label>
-            <input type="number" name="{{feature}}" value="">
-        {% endfor %}
+            <table>
+            <tr>
+            {% for feature in context.features %}
+                {% if loop.index0 % 4 == 0 %}
+                    </tr>
+                    <tr>
+                {% endif %}
+                <td><label for="{{feature}}">{{feature}}:</label></td>
+
+                <td><input type="number" name="{{feature}}" value=""></td>
+            {% endfor %}
+            </tr>
+            </table>
         <hr><br>
-        <input type="submit" value="Input Feature">
+        <input type="submit" value="Input Feature" class="button-10" role="button">
         </form>
     </div>
 

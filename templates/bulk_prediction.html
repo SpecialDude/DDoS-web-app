@@ -24,16 +24,13 @@
                 </thead>
 
                 <tbody>
-
                     {% if context.display_form %}
-
                     <tr>
                         {% for heading in context.feature_names %}
                         <th><input type="number" name="{{heading}}"/></th>
                         {% endfor %}
                         <th></th>
                     </tr>
-
                     {% else %}
 
                     {% for row in context.bulk_data.iterrows() %}
