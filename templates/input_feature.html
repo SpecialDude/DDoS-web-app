@@ -1,35 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input new Feature Values</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Input new Feature Values{% endblock %}
 
 
-    <div class="container">
-        <h1>Input new Feature Values</h1>
-        <form action="" method="post">
-            <table>
-            <tr>
-            {% for feature in context.features %}
-                {% if loop.index0 % 4 == 0 %}
-                    </tr>
-                    <tr>
-                {% endif %}
-                <td><label for="{{feature}}">{{feature}}:</label></td>
 
-                <td><input type="number" name="{{feature}}" value=""></td>
-            {% endfor %}
-            </tr>
-            </table>
-        <hr><br>
-        <input type="submit" value="Input Feature" class="button-10" role="button">
-        </form>
-    </div>
+{% block root %}
+<div class="container">
+    <h1>Input new Feature Values</h1>
+    <form action="" method="post">
+        <table>
+        <tr>
+        {% for feature in context.features %}
+            {% if loop.index0 % 4 == 0 %}
+                </tr>
+                <tr>
+            {% endif %}
+            <td><label for="{{feature}}">{{feature}}:</label></td>
 
-</body>
-</html>
+            <td><input type="number" name="{{feature}}" value=""></td>
+        {% endfor %}
+        </tr>
+        </table>
+    <hr><br>
+    <input type="submit" value="Input Feature" class="button-10" role="button">
+    </form>
+</div>
+{% endblock %}

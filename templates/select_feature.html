@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Feature</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Select Feature{% endblock %}
 
+{% block root %}
     <div class="containerIntrisic">
         {% if not context.display %}
             <h2>Pls enter the number of feature values to select</h2>
@@ -42,6 +35,4 @@
             </table>
         {% endif %}
     </div>
-
-</body>
-</html>
+{% endblock %}

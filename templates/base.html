@@ -6,20 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} DDoS Prediction {% endblock %}</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
     {% endblock %}
 </head>
 <body>
+
     <header>
-        {% block header %}
-        <div class="nav-container">
+        <a href="{{url_for('home')}}">
+        <div class="nav-logo">
+            <p>DDoS</p>
+            <p>Prediction</p>
+        </div>
+        </a>
+        <div class="nav-bar">
             <a href="{{url_for('input_feature')}}"> <button class="nav-content btn">Input Feature</button> </a>
             <a href="{{url_for('select_random_feature')}}"> <button class="nav-content btn">Select Test Features</button> </a>
             <a href="{{url_for('perform_bulk_prediction')}}"> <button class="nav-content btn">Bulk Prediction</button> </a>
         </div>
-        {% endblock %}
+
     </header>
-    {% block body %}
-    {% endblock %}
+
+    <div class="root">
+        {% block root %}
+        {% endblock %}
+    </div>
+
 </body>
 </html>

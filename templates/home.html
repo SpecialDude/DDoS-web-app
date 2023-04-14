@@ -1,7 +1,29 @@
-<h1>Welcome</h1>
+{% extends "base_template.html" %}
 
-Visit using the urls:
+{% block title %}Home - DDoS Predictor {% endblock %}
 
-<p><a href="{{url_for('input_feature')}}">Get Prediction for Feature Values</a> </p>
-<p><a href="{{url_for('select_random_feature')}}">Select Random Test Values</a> </p>
-<p><a href="{{url_for('perform_bulk_prediction')}}">Bulk Prediction</a></p>
+{% block head %}
+    {{ super() }}
+    <style >
+        body {
+            background: url("{{ url_for('static', filename='img/bg2.jpg') }}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            overflow: hidden;
+
+            /* background-color: #2a2a72;
+            background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%); */
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+<div class="welcome-box-content-1 welcome-box">
+    <h1 class="main-header">DDoS Prediction</h1>
+    <p>Get prediction for a DDoS attack using our machine learning model</p>
+</div>
+<a href="{{url_for('input_feature')}}"><h2 class="welcome-box-content-2 welcome-box">Oya let's go...</h2></a>
+
+{% endblock %}
