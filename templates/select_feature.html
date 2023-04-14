@@ -12,7 +12,7 @@
             </form>
             {{context.errmsg}}
         {% else %}
-            <h2>Displaying {{context.number_of_features}} random feature values</h2>
+            <h2>Displaying {{context.number_of_features}} random feature values and their predicted target</h2>
             <table class="styled-table">
                 <thead>
                     <tr>
@@ -31,8 +31,8 @@
                     </tr>
                     {% endfor %}
                 </tbody>
-
             </table>
+            <a href=""><button class="btn">Predict</button></a>
         {% endif %}
     </div>
 {% endblock %}
